@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista zadań</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div style="width: 100%; max-width: 1000px; margin: 100px  auto">
+
+    <h2>Lista zadań</h2>
+    <a href="/">Wszystkie zadania</a>
+    <a href="/archive">Archiwum</a>
+    <span> </span>
+
+    <div style="display: inline-block" th:each="category : ${T(pl.javastart.lista.Category).values()}">
+        <a th:href="|/?category=${category.name()}|" th:text="${category.displayName}"></a>
+        <span> </span>
+    </div>
+
+</div>
+
+</body>
+</html>
