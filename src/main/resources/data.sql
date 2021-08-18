@@ -1,15 +1,15 @@
-CREATE TABLE list
+CREATE TABLE TASK
 (
     description varchar(255),
-    action varchar (255),
+    done varchar (255),
     category varchar (255)
 );
 
-INSERT INTO list(description, action, category)
-VALUES ('Załadować zmywarkę', 'false', 'Obowiązki domowe');
-INSERT INTO list(description, action, category)
-VALUES ('Odrobić lekcje', 'false', 'Szkoła');
-INSERT INTO list(description, action, category)
-VALUES ('Złożyć wypowiedzenie', 'false', 'Praca');
-INSERT INTO list(description, action, category)
-VALUES ('Pościelić łóżko', 'true', 'Obowiązki domowe');
+INSERT INTO TASK(description, done, category)
+VALUES ('Załadować zmywarkę', 'Nie', 'HOUSEWORK');
+INSERT INTO TASK(description, done, category)
+VALUES ('Odrobić lekcje', 'Nie', 'SCHOOL');
+INSERT INTO TASK(description, done, category)
+VALUES ('Złożyć wypowiedzenie', 'Nie', 'WORK');
+INSERT INTO TASK(description, done, category)
+VALUES ('Pościelić łóżko', 'Tak', 'HOUSEWORK');

@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title>Lista zadań</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
             crossorigin="anonymous"></script>
 </head>
 <body>
 
-<div style="width: 100%; max-width: 1000px; margin: 100px  auto">
+<div style="width: 100%; max-width: 1000px; margin: 100px  auto; ">
 
     <h2>Lista zadań</h2>
     <a href="/">Wszystkie zadania</a>
@@ -23,6 +23,14 @@
         <a th:href="|/?category=${category.name()}|" th:text="${category.displayName}"></a>
         <span> </span>
     </div>
+
+    <ul class="list-group">
+        <li class="list-group-item" th:each="task: ${taskList}"
+            th:style="| ${task.done == 'Nie' ? 'background-color: lightcoral' : 'background-color: palegreen' }|">
+            <a th:href="|/task/${task.id}|" th:text="|${task.description} |"
+            ></a>
+        </li>
+    </ul>
 
 </div>
 

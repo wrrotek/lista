@@ -2,7 +2,6 @@ package pl.javastart.lista;
 
 public enum Category {
 
-
     HOUSEWORK("Prace domowe"), WORK("Praca"), SCHOOL("Szkoła");
 
     private String displayName;
@@ -16,3 +15,4 @@ public enum Category {
     }
 
 }
+

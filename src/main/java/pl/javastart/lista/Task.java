@@ -1,21 +1,26 @@
 package pl.javastart.lista;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 
+@Entity
 public class Task {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
+    private String done;
     @Enumerated(EnumType.STRING)
     private Category category;
-    private boolean done;
 
 
-    public Task(String description, Category category, boolean done) {
+    public Task(String description, Category category, String done) {
         this.description = description;
         this.category = category;
         this.done = done;
+    }
+
+    public Task() {
     }
 
     public Long getId() {
@@ -42,11 +47,11 @@ public class Task {
         this.category = category;
     }
 
-    public boolean isDone() {
+    public String getDone() {
         return done;
     }
 
-    public void setDone(boolean done) {
+    public void setDone(String done) {
         this.done = done;
     }
 }
